@@ -1,22 +1,17 @@
-import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import {combineReducers, createStore} from 'redux';
 import {Provider} from 'react-redux'
-
+import { store } from './reducers';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const testReducer = () => 'Hello World';
 
-const store = createStore(combineReducers({
-  test: testReducer
-}))
+
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-  <StrictMode>
+
     <Provider store={store}>
       <App />
-    </Provider>
-  </StrictMode>,
+    </Provider>,
   rootElement
 );
